@@ -11,8 +11,10 @@ const Hero = () => {
                         Empower your future with the courses designed to <span className="text-blue-600">fit your choice.</span>
                         <img src={assets.sketch} alt="" className="md:block hidden absolute -bottom-7 right-2" />
                     </h1>
-                    <p>Explore a wide range of courses and unlock your potential with our expert-led programs.</p>
-                    <SearchBar/>
+                    <div className="w-full flex flex-col items-center space-y-5 lg:space-y-10">
+                        <p>Explore a wide range of courses and unlock your potential with our expert-led programs.</p>
+                        <SearchBar/>
+                    </div>
                 </div>
             </div>
         </section>
