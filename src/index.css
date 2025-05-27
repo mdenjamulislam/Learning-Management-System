@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 @plugin "daisyui" {
-    themes: dark --default, light --prefersdark;
+    themes: light --default, dark;
 }
 
 * {

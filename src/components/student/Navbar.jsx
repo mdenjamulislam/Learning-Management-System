@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import { assets } from "../../assets/assets";
 import { useClerk, UserButton, useUser } from "@clerk/clerk-react";
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 
 const Navbar = () => {
+
+    const {navigate} = useContext(AppContext);
 
     const isCourseListPage = location.pathname.includes('/course-list');
 
@@ -15,7 +19,7 @@ const Navbar = () => {
             <nav className={`navbar px-4 xl:px-10 shadow-sm ${isCourseListPage ? "bg-white" : "bg-cyan-100/80"}`}>
                 <div className="flex-1">
                     <Link className="flex items-center gap-1.5">
-                        <img src={assets.logo} alt="" />
+                        <img onClick={() => navigate('/')} src={assets.logo} alt="" />
                     </Link>
                 </div>
                 <div className="hidden md:flex items-center gap-2">
