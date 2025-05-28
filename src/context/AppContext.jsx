@@ -10,6 +10,7 @@ export const AppContextProvider = ({ children }) => {
     const navigate = useNavigate();
 
     const [allCourses, setAllCourses] = useState([]);
+    const [isEducator, setIsEducator] = useState(true);
 
     const fetchAllCourses = async () => {
         setAllCourses(dummyCourses);
@@ -23,21 +24,23 @@ export const AppContextProvider = ({ children }) => {
     const calculateRating = (course) => {
         if (course.courseRatings.length === 0) {
             return 0;
-        } 
+        }
 
         let totalRating = 0;
         course.courseRatings.forEach((rating) => {
             totalRating += rating.rating;
         })
 
-        return totalRating / course.courseRatings.lenght;
+        return totalRating / course.courseRatings.length;
     }
 
     const value = {
         currency,
         allCourses,
         navigate,
-        calculateRating
+        calculateRating,
+        isEducator,
+        setIsEducator
     };
 
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

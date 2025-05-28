@@ -22,7 +22,7 @@ const CourseCard = ({course}) => {
                             </>
                         ))}
                     </div>
-                    <p className='text-gray-400'>22</p>
+                    <p className='text-gray-400'>{course.courseRatings.length}</p>
                 </div>
                 <p className='text-base font-semibold'>{currency} {(course?.coursePrice - course.discount * course.coursePrice / 100).toFixed(2)}</p>
             </div>

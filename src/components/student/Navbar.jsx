@@ -6,7 +6,7 @@ import { AppContext } from "../../context/AppContext";
 
 const Navbar = () => {
 
-    const {navigate} = useContext(AppContext);
+    const {navigate, isEducator} = useContext(AppContext);
 
     const isCourseListPage = location.pathname.includes('/course-list');
 
@@ -28,7 +28,7 @@ const Navbar = () => {
                             <>
                                 <ul className="menu menu-horizontal px-1">
                                     <li>
-                                        <Link to="">Become Educator</Link>
+                                        <button onClick={() => {navigate('/educator')}}>{isEducator ? 'Educator Dashboard' : 'Become Educator'}</button>
                                     </li>
                                     <li>
                                         <Link to="/my-enrollments">My Enrollment</Link>
@@ -49,6 +49,9 @@ const Navbar = () => {
                 </div>
                 {/* Mobile */}
                 <div className="md:hidden flex items-center gap-2">
+                    <div className="flex items-center gap-2">
+                        <button onClick={() => {navigate('/educator')}}>{isEducator ? 'Educator Dashboard' : 'Become Educator'}</button>
+                    </div>
                     {user ? (
                         <UserButton />
                     ) : (
