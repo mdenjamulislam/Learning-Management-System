@@ -10,7 +10,7 @@ const TestimonialsSection = () => {
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam molestiae mollitia qui? Nulla reiciendis distinctio ut omnis, reprehenderit aut sed!</p>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 lg:mt-10'>
                 {
                     dummyTestimonial.map((testimonial, index) => (
                         <>
