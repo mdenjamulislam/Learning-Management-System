@@ -27,6 +27,16 @@ export default {
       container: {
         center: true,
         padding: '1rem'
+      },
+      spacing: {
+        'section-height': 'calc(80vh - 4rem)', // Adjust based on your header/footer height
+        'section-height-mobile': 'calc(80vh - 3rem)', // Adjust based on your header/footer height for mobile
+      },
+      maxWidth: {
+        'course-card': '424px',
+      },
+      boxShadow: {
+        'custom-card': '0 4px 15px 2px rgba(0, 0, 0, 0.1)',
       }
     },
   },
