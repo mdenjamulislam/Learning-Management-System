@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import { assets } from "../../assets/assets";
 import { useClerk, UserButton, useUser } from "@clerk/clerk-react";
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 
 const Navbar = () => {
+
+    const {navigate, isEducator} = useContext(AppContext);
 
     const isCourseListPage = location.pathname.includes('/course-list');
 
@@ -14,8 +18,8 @@ const Navbar = () => {
         <header>
             <nav className={`navbar px-4 xl:px-10 shadow-sm ${isCourseListPage ? "bg-white" : "bg-cyan-100/80"}`}>
                 <div className="flex-1">
-                    <Link className="flex items-center gap-1.5">
-                        <img src={assets.logo} alt="" />
+                    <Link to='/' className="flex items-center gap-1.5">
+                        <img onClick={() => navigate('/')} src={assets.logo} alt="" />
                     </Link>
                 </div>
                 <div className="hidden md:flex items-center gap-2">
@@ -24,7 +28,7 @@ const Navbar = () => {
                             <>
                                 <ul className="menu menu-horizontal px-1">
                                     <li>
-                                        <Link to="">Become Educator</Link>
+                                        <button onClick={() => {navigate('/educator')}}>{isEducator ? 'Educator Dashboard' : 'Become Educator'}</button>
                                     </li>
                                     <li>
                                         <Link to="/my-enrollments">My Enrollment</Link>
@@ -45,6 +49,9 @@ const Navbar = () => {
                 </div>
                 {/* Mobile */}
                 <div className="md:hidden flex items-center gap-2">
+                    <div className="flex items-center gap-2">
+                        <button onClick={() => {navigate('/educator')}}>{isEducator ? 'Educator Dashboard' : 'Become Educator'}</button>
+                    </div>
                     {user ? (
                         <UserButton />
                     ) : (
