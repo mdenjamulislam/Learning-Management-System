@@ -33,7 +33,7 @@ export default {
         'section-height-mobile': 'calc(80vh - 3rem)', // Adjust based on your header/footer height for mobile
       },
       maxWidth: {
-        'course-card': '424px',
+        'course-card': '480px',
       },
       boxShadow: {
         'custom-card': '0 4px 15px 2px rgba(0, 0, 0, 0.1)',

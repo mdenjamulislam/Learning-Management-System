@@ -14,6 +14,12 @@
     font-family: "Caveat", cursive;
 }
 
+@layer utilities {
+    .sec_padding {
+        @apply py-4 md:py-6 lg:py-8 xl:py-10;
+    }
+}
+
 @layer components {
     .section_heading {
         @apply w-full lg:max-w-xl mx-auto space-y-4;
