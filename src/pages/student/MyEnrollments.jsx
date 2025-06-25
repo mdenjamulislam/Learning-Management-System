@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { AppContext } from '../../context/AppContext';
 import { Line } from 'rc-progress';
 import Footer from '../../components/student/Footer';
+import { Link } from 'react-router-dom';
 
 const MyEnrollments = () => {
 
@@ -24,7 +25,7 @@ const MyEnrollments = () => {
     ])
     return (
         <>
-            <section className='py-6 md:py-10'>
+            <section className="py-6 md:py-10">
                 <div className="container">
                     <h1 className="text-2xl font-semibold pb-6 md:pb-8">My Enrollments</h1>
                     <div className="overflow-x-auto">
@@ -63,9 +64,12 @@ const MyEnrollments = () => {
                                             {progressArray[index] && `${progressArray[index].lectureCompleted} / ${progressArray[index].totalLectures}`} <span>lectures</span>
                                         </td>
                                         <th>
-                                            <button onClick={() => navigate("/player/" + course._id)} className="badge badge-info">
-                                                {progressArray[index] && progressArray[index].lectureCompleted / progressArray[index].totalLectures === 1 ? "Completed" : "On Going"}
-                                            </button>
+                                            <div className='flex items-center gap-2'>
+                                                <button onClick={() => navigate("/player/" + course._id)} className="badge badge-info">
+                                                    {progressArray[index] && progressArray[index].lectureCompleted / progressArray[index].totalLectures === 1 ? "Completed" : "On Going"}
+                                                </button>
+                                                <Link to={`/course/ + ${course._id}`} className='btn btn-xs btn_accent'>View Details</Link>
+                                            </div>
                                         </th>
                                     </tr>
                                 ))}

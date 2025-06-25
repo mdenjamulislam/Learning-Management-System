@@ -18,7 +18,7 @@ const Navbar = () => {
         <header>
             <nav className={`navbar px-4 xl:px-10 shadow-sm ${isCourseListPage ? "bg-white" : "bg-cyan-100/80"}`}>
                 <div className="flex-1">
-                    <Link to='/' className="flex items-center gap-1.5">
+                    <Link to='/' className="inline-flex items-center gap-1.5">
                         <img onClick={() => navigate('/')} src={assets.logo} alt="" />
                     </Link>
                 </div>
