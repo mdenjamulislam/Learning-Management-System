@@ -12,13 +12,21 @@ export const AppContextProvider = ({ children }) => {
 
     const [allCourses, setAllCourses] = useState([]);
     const [isEducator, setIsEducator] = useState(true);
+    const [enrolledCourses, setEnrolledCourses] = useState([]);
 
     const fetchAllCourses = async () => {
         setAllCourses(dummyCourses);
     }
 
+    // Fetch user enrolled courses
+    const fetchUeseEnrolledCourses = async () => {
+        setEnrolledCourses(dummyCourses);
+
+    }
+
     useEffect(() => {
         fetchAllCourses();
+        fetchUeseEnrolledCourses();
     }, [])
 
     // function to calculate average rating of course
@@ -71,6 +79,8 @@ export const AppContextProvider = ({ children }) => {
         calculateChapterTime,
         calculateCourseDuration,
         calculateNoOfLectures,
+        enrolledCourses,
+        fetchUeseEnrolledCourses,
     };
 
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
