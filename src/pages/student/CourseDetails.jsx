@@ -22,7 +22,7 @@ const CourseDetails = () => {
 
     useEffect(() => {
         fetchCourseData();
-    }, []);
+    }, [allCourses]);
 
     return course ? (
         <>
