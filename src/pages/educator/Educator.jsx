@@ -1,12 +1,17 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Navbar from '../../components/educator/Navbar';
+import Sidebar from '../../components/educator/Sidebar';
 
 const Educator = () => {
     return (
-        <div>
-            Educator Page
-            <div>
-                <Outlet/>
+        <div className="min-h-screen">
+            <Navbar />
+            <div className='flex'>
+                <Sidebar />
+                <div className='flex-1'>
+                    <Outlet />
+                </div>
             </div>
         </div>
     );
